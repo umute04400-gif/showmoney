@@ -1,0 +1,11 @@
+Font Bilgileri:
+================
+
+Bu klasör Gala Condensed Medium font dosyasını içermelidir.
+
+Kurulum:
+1. Gala Condensed Medium fontunu indirin
+2. WOFF2 formatına dönüştürün
+3. 'GalaCondensed-Medium.woff2' adıyla bu klasöre yerleştirin
+
+Font olmadan sistem Arial ile çalışacaktır.

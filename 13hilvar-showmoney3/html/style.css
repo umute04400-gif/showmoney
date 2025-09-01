@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'Gala Condensed';
+    src: url('fonts/GalaCondensed-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Gala Condensed', Arial, sans-serif;
+    overflow: hidden;
+    background: transparent;
+    user-select: none;
+    pointer-events: none;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Sağ üst para gösterimi */
+.money-display {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    font-size: 18px;
+    font-weight: 500;
+    color: #4ADE80;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    font-family: 'Gala Condensed', Arial, sans-serif;
+    opacity: 1;
+}
+
+.money-display.hidden {
+    opacity: 0;
+}
+
+/* Responsive tasarım */
+@media screen and (max-width: 1920px) {
+    .money-display {
+        top: 18px;
+        right: 18px;
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .money-display {
+        top: 15px;
+        right: 15px;
+        font-size: 16px;
+    }
+}
