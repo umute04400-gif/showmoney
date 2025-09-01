@@ -1,0 +1,17 @@
+Font Information:
+================
+
+This folder should contain the Gala Condensed Medium font file.
+
+To use this money display system properly, you need to:
+
+1. Download the Gala Condensed Medium font
+2. Convert it to WOFF2 format (for web compatibility)
+3. Place the file as 'GalaCondensed-Medium.woff2' in this folder
+
+Alternative fonts that work well if Gala Condensed is not available:
+- Arial Narrow
+- Oswald
+- Roboto Condensed
+
+The CSS will fallback to these fonts automatically if the primary font is not found.

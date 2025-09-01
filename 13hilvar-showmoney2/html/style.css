@@ -1,0 +1,238 @@
+@font-face {
+    font-family: 'Gala Condensed';
+    src: url('fonts/GalaCondensed-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Gala Condensed', 'Arial Narrow', sans-serif;
+    overflow: hidden;
+    background: transparent;
+    user-select: none;
+    pointer-events: none;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Sağ üst para gösterimi */
+.money-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.money-container.hidden {
+    opacity: 0;
+}
+
+.money-display {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 100%);
+    border: 2px solid rgba(74, 222, 128, 0.4);
+    border-radius: 8px;
+    padding: 8px 16px;
+    backdrop-filter: blur(8px);
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.5),
+        0 0 15px rgba(74, 222, 128, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    min-width: 120px;
+}
+
+.money-icon {
+    font-size: 22px;
+    font-weight: 600;
+    color: #4ADE80;
+    margin-right: 6px;
+    text-shadow: 
+        0 0 8px rgba(74, 222, 128, 0.6),
+        0 2px 4px rgba(0, 0, 0, 0.8);
+    filter: drop-shadow(0 0 4px rgba(74, 222, 128, 0.3));
+}
+
+.money-amount {
+    font-size: 20px;
+    font-weight: 500;
+    color: #FFFFFF;
+    text-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 6px rgba(255, 255, 255, 0.1);
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Para güncelleme animasyonu */
+.money-amount.updating {
+    color: #FDE047;
+    transform: scale(1.05);
+    text-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 10px rgba(253, 224, 71, 0.5);
+}
+
+/* Ekran ortası para değişim bildirimi */
+.money-notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2000;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.money-notification.show {
+    opacity: 1;
+    transform: translate(-50%, -60%);
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 12px;
+    padding: 12px 24px;
+    backdrop-filter: blur(10px);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.6),
+        0 0 20px rgba(0, 0, 0, 0.3);
+    border: 2px solid transparent;
+    min-width: 120px;
+}
+
+.notification-content.positive {
+    border-color: rgba(74, 222, 128, 0.5);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.6),
+        0 0 20px rgba(74, 222, 128, 0.2);
+}
+
+.notification-content.negative {
+    border-color: rgba(239, 68, 68, 0.5);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.6),
+        0 0 20px rgba(239, 68, 68, 0.2);
+}
+
+.notification-sign {
+    font-size: 24px;
+    font-weight: 600;
+    margin-right: 4px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.notification-sign.positive {
+    color: #4ADE80;
+    filter: drop-shadow(0 0 6px rgba(74, 222, 128, 0.4));
+}
+
+.notification-sign.negative {
+    color: #EF4444;
+    filter: drop-shadow(0 0 6px rgba(239, 68, 68, 0.4));
+}
+
+.notification-amount {
+    font-size: 22px;
+    font-weight: 500;
+    color: #FFFFFF;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    letter-spacing: 0.5px;
+}
+
+/* Responsive tasarım */
+@media screen and (max-width: 1920px) {
+    .money-container {
+        top: 15px;
+        right: 15px;
+    }
+    
+    .money-display {
+        padding: 6px 14px;
+    }
+    
+    .money-icon {
+        font-size: 20px;
+        margin-right: 5px;
+    }
+    
+    .money-amount {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .money-container {
+        top: 12px;
+        right: 12px;
+    }
+    
+    .money-display {
+        padding: 5px 12px;
+    }
+    
+    .money-icon {
+        font-size: 18px;
+    }
+    
+    .money-amount {
+        font-size: 16px;
+    }
+    
+    .notification-content {
+        padding: 10px 20px;
+    }
+    
+    .notification-sign {
+        font-size: 20px;
+    }
+    
+    .notification-amount {
+        font-size: 18px;
+    }
+}
+
+/* Bildirim animasyonları */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -40%) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -60%) scale(1);
+    }
+}
+
+@keyframes slideOutUp {
+    from {
+        opacity: 1;
+        transform: translate(-50%, -60%) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translate(-50%, -80%) scale(0.9);
+    }
+}
+
+.money-notification.slide-in {
+    animation: slideInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.money-notification.slide-out {
+    animation: slideOutUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}

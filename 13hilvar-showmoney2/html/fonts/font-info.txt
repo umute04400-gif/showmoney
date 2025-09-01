@@ -1,0 +1,24 @@
+Font Bilgileri:
+================
+
+Bu klasör Gala Condensed Medium font dosyasını içermelidir.
+
+Para gösterme sistemini düzgün kullanmak için:
+
+1. Gala Condensed Medium fontunu indirin
+2. WOFF2 formatına dönüştürün (web uyumluluğu için)
+3. Dosyayı 'GalaCondensed-Medium.woff2' adıyla bu klasöre yerleştirin
+
+Alternatif fontlar (Gala Condensed bulunamazsa):
+- Arial Narrow
+- Oswald
+- Roboto Condensed
+
+CSS otomatik olarak bu fontlara geçiş yapacaktır.
+
+Font Dönüştürme:
+- Online font converter kullanabilirsiniz
+- TTF/OTF'den WOFF2'ye dönüştürün
+- Dosya boyutunu optimize edin
+
+Not: Font dosyası olmadan sistem Arial Narrow ile çalışacaktır.
